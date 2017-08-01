@@ -31,7 +31,6 @@ public class MainActivity extends AppCompatActivity {
 
         lv = (ListView) findViewById(R.id.lv);
 
-
         // Defined Array values to show in ListView
         String[] al = new String[] { "Singapore National Day is on 9 Aug",
                 "Singapore is 52 years old",
@@ -107,7 +106,7 @@ public class MainActivity extends AppCompatActivity {
             });
             AlertDialog alertDialog = builder.create();
             alertDialog.show();
-        } else {
+        } else if (item.getItemId() == R.id.action_quit) {
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
             builder.setTitle("Quit?").setPositiveButton("QUIT", new DialogInterface.OnClickListener() {
                 @Override
@@ -122,6 +121,8 @@ public class MainActivity extends AppCompatActivity {
             });
             AlertDialog alertDialog = builder.create();
             alertDialog.show();
+        } else {
+
         }
         return super.onOptionsItemSelected(item);
     }
